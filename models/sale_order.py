@@ -103,3 +103,6 @@ class SaleOrderInherit(models.Model):
                     records.tracking_number_order = tracking_number
             res = super(SaleOrderInherit, self).action_confirm()
             return res
+        else:
+            res = super(SaleOrderInherit, self).action_confirm()
+            return res
