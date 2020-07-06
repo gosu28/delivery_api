@@ -97,3 +97,6 @@ class StockReturnPickingInherit(models.TransientModel):
                 requests.post(url, data=data_json, headers=headers)
             res = super(StockReturnPickingInherit, self).create_returns()
             return res
+        else:
+            res = super(StockReturnPickingInherit, self).create_returns()
+            return res
