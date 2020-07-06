@@ -43,6 +43,9 @@ class StockPickingInherit(models.Model):
             requests.post(url, data=data_json, headers=headers)
             res = super(StockPickingInherit, self).button_validate()
             return res
+        else:
+            res = super(StockPickingInherit, self).button_validate()
+            return res
 
     def action_cancel(self):
         if self.env['ir.config_parameter'].sudo().get_param('integrate_shipping.is_token'):
@@ -59,5 +62,8 @@ class StockPickingInherit(models.Model):
             data_json = json.dumps(data, indent=4)
             data_json.replace(" ' ", ' " ')
             requests.post(url, data=data_json, headers=headers)
+            res = super(StockPickingInherit, self).action_cancel()
+            return res
+        else:
             res = super(StockPickingInherit, self).action_cancel()
             return res
